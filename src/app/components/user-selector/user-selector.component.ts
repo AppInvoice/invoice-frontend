@@ -9,21 +9,22 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class UserSelectorComponent implements OnInit {
   public users: User[];
+  public selectedUser: User;
 
   constructor(private userService: UserService) {}
 
   ngOnInit(): void {
     this.userService.findUsers().subscribe((usersRetrieved) => {
       this.users = usersRetrieved;
+      this.selectedUser = this.users[0];
+      this.retrieveBalance();
     });
   }
 
   /**
    * Receives an email and trigger the FinalBalance service request.
-   *
-   * @param email The email of the selected user.
    */
-  public retrieveBalance(email: string): void {
-    this.userService.retrieveUserBalance(email);
+  public retrieveBalance(): void {
+    this.userService.retrieveUserBalance(this.selectedUser.email);
   }
 }
