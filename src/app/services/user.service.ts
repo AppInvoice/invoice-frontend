@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 import { User } from '../model/user';
@@ -11,6 +11,8 @@ import { User } from '../model/user';
 export class UserService {
   private readonly URI_ALL_USERS = '/users';
   private readonly URI_USER_BALANCE = '/retrieve-balance';
+
+  public userBalance = new BehaviorSubject<User>(null);
 
   constructor(private httpClient: HttpClient) {}
 
@@ -28,11 +30,13 @@ export class UserService {
   /**
    * Retrieves the user balance using the email as QueryParam.
    *
-   * @returns The fully user information
+   * The response will be the next value of a BehaviorSubject, so any part of the applciation can be triggered.
    */
-  public retrieveUserBalance(): Observable<User> {
-    return this.httpClient.get<User>(
-      environment.baseUrl + this.URI_USER_BALANCE
-    );
+  public retrieveUserBalance(email: string): void {
+    this.httpClient
+      .get<User>(environment.baseUrl + this.URI_USER_BALANCE, {
+        params: new HttpParams().set('email', email),
+      })
+      .subscribe((user) => this.userBalance.next(user));
   }
 }

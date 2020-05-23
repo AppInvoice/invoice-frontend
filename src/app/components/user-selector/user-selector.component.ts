@@ -9,7 +9,6 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class UserSelectorComponent implements OnInit {
   public users: User[];
-  public user: User;
 
   constructor(private userService: UserService) {}
 
@@ -17,5 +16,14 @@ export class UserSelectorComponent implements OnInit {
     this.userService.findUsers().subscribe((usersRetrieved) => {
       this.users = usersRetrieved;
     });
+  }
+
+  /**
+   * Receives an email and trigger the FinalBalance service request.
+   *
+   * @param email The email of the selected user.
+   */
+  public retrieveBalance(email: string): void {
+    this.userService.retrieveUserBalance(email);
   }
 }
