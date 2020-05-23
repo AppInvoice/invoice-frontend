@@ -32,14 +32,20 @@ select:focus {
   outline: none;
 }
 
-select:after {
-  content: '\f0dc';
-  font-family: 'FontAwesome';
-  background: red;
+#user-selector-label:after {
+  content: '\f107';
+  font-family: FontAwesome;
   z-index: 1;
+  color: #fff;
   text-align: center;
+  position: relative;
+  right: 20px;
   width: 10%;
   height: 100%;
   pointer-events: none;
   box-sizing: border-box;
+}
+
+#user-selector-label:after:hover {
+  font-size: 10px;
 }
