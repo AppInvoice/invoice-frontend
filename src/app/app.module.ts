@@ -2,12 +2,19 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { UserContainerComponent } from './components/user-container/user-container.component';
+import { UserDetailsComponent } from './components/user-details/user-details.component';
+import { UserSelectorComponent } from './components/user-selector/user-selector.component';
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  declarations: [
+    AppComponent,
+    UserSelectorComponent,
+    UserDetailsComponent,
+    UserContainerComponent,
+  ],
+  imports: [BrowserModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
