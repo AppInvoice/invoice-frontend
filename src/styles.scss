@@ -10,6 +10,12 @@
   src: url('./assets/fonts/Montserrat-Thin.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('./assets/fonts/fa-brands-400.ttf');
+  src: url('./assets/fonts/fa-brands-400.ttf') format('truetype');
+}
+
 html,
 body {
   margin: 0px;

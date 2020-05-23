@@ -10,3 +10,36 @@
   font-size: 1.5em;
   margin-bottom: 100px;
 }
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  border: 1px solid white;
+  border-radius: 0px;
+  font-size: 14px;
+  padding: 5px;
+  width: 250px;
+  color: #fff;
+  text-align: center;
+  font-family: 'MonserratThin';
+  height: 50px;
+  padding-left: 15px;
+}
+
+select:focus {
+  outline: none;
+}
+
+select:after {
+  content: '\f0dc';
+  font-family: 'FontAwesome';
+  background: red;
+  z-index: 1;
+  text-align: center;
+  width: 10%;
+  height: 100%;
+  pointer-events: none;
+  box-sizing: border-box;
+}
