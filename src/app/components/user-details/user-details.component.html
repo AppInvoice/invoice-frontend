@@ -1,1 +1,4 @@
-el tio con nombre {{user?.name}} e email {{user?.email}} tiene {{user?.balance}} euracos
+<div *ngIf="user">
+    Account <span class="bold-text">{{user.email}}</span>
+    has a balance of <span class="bold-text">EUR {{user.balance}}</span>
+</div>

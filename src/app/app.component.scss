@@ -1,0 +1,10 @@
+.screen-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.left-half {
+  background: linear-gradient(to right, #ec5553 0%, #ec536e 100%);
+}

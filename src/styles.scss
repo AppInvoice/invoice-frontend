@@ -1,1 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: 'MonserratBold';
+  src: url('./assets/fonts/Montserrat-Bold.ttf');
+  src: url('./assets/fonts/Montserrat-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'MonserratThin';
+  src: url('./assets/fonts/Montserrat-Thin.ttf');
+  src: url('./assets/fonts/Montserrat-Thin.ttf') format('truetype');
+}
+
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+  font-family: 'MonserratThin';
+}
+
+.flex-vertical-center {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}

@@ -1,3 +1,7 @@
-<select #selected (change)="retrieveBalance(selected.value)">
-    <option [value]="user.email" *ngFor="let user of users">{{user.name}}</option>
-</select>
+<div class="selector-wrapper">
+    <h1 class="title">Component</h1>
+    <p class="caption">Select an account</p>
+    <select #selected (change)="retrieveBalance(selected.value)">
+        <option [value]="user.email" *ngFor="let user of users">{{user.name}}</option>
+    </select>
+</div>
