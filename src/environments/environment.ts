@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'http://localhost:8080/invoice',
+  baseUrl:
+    'http://envbackend.eba-eg3dkheu.eu-west-1.elasticbeanstalk.com/invoice',
 };
 
 /*
